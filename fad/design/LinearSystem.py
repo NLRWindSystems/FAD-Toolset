@@ -237,7 +237,7 @@ class LinearSystem():
                     dr = self.coords[iB,:] - self.coords[iA,:]
                     l  = np.linalg.norm(dr)
                     self.l.append(l)           # store length   <<<<<<<< need to subtract fairlead radii... ?
-                    self.u.append(np.round(dr/l, 2))        # store unit vector
+                    self.u.append(dr/l)        # store unit vector
                     self.group.append(k)        # store lineDesign type (starts at 1, need to subtract 1 for index)
         
                     self.endA.append(iA)       # end A attachment object index
